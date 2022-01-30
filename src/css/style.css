@@ -48,13 +48,13 @@ nav{
 .main{
     width: 100%;
     height: calc(100% - 60px);
-    background: url(../img/boy.png) 90% 100%/auto 85% no-repeat, url("../img/bg.jpg") center/cover no-repeat;
+    background: url(../img/boy.png) 90% 100%/auto 85% no-repeat, url("../img/bg.jpg") top/100% auto no-repeat;
     box-shadow: inset 0px -20px 30px -3px #c9cbd3;
 }
 
 .title_container{
     float: left;
-    margin: 432px 0px 0px 404px;
+    margin: 380px 0px 0px 404px;
     color: #2c384a;
     text-align: center;
 }
