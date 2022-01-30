@@ -9,6 +9,8 @@
     <meta property="og:title" content="Это моя первая страница!">
     
     <title>Андрей Браун - Веб-разработчик</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
@@ -37,13 +39,14 @@
    
    <div class="about_me"><div class="text_container">
      <h2>ОБО МНЕ</h2>
-      <img src="" alt="">
-       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati possimus quidem voluptate, aliquam odit quo inventore necessitatibus quos! Nobis perferendis aperiam quo, ipsam. Sunt esse autem provident quos, hic reiciendis quia alias tenetur?</p>
-       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum reiciendis animi repudiandae. Magnam ullam sed, aut nihil totam, autem doloremque optio. Esse ex vitae rerum excepturi voluptatem laudantium dicta vel voluptate, ullam nesciunt.</p>
+      <img src="img/title.png" class="title" alt="">
+      <img src="img/photo.png" class="photo" alt="">
+       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime quas exercitationem porro reiciendis, optio ducimus dolor quibusdam nobis nostrum dicta, aperiam praesentium iure ut, enim culpa quod. Inventore nemo omnis facere nulla, consequatur.</p>
+       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime unde harum, voluptas obcaecati, pariatur, voluptate tenetur sed labore, deserunt dolore velit beatae inventore magnam! Vitae quas, quos repellendus asperiores aperiam pariatur ullam inventore..</p>
        <input type="submit" value="Скачать резюме">
    </div></div>
    
-   <div class="skills"><div class="title_skills"><h2>ЧТО Я УМЕЮ</h2></div>
+   <div class="skills"><div class="title_skills"><h2>ЧТО Я УМЕЮ</h2> <img src="img/title.png" class="title" alt=""></div>
       <div class="skills_item1">
       <img src="img/web.png" alt="">
       <h4>Веб-дизайн</h4>
@@ -68,16 +71,17 @@
    
    <div class="cases"><div class="cases_container">
       <h2>КЕЙСЫ</h2>
+       <img src="img/title.png" class="title" alt="">
        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias ipsum quasi dicta et eos ab, corporis provident culpa.</p>
-       <img src="" alt="">
+       <img src="img/case.jpg" class="case" alt="">
        <div class="client"> 
        <h3>CLIENT:</h3><p>Какая-то компания</p>
        <h3>WEBSITE:</h3><p>http://www.somedomain.com</p>
+       <input type="submit" value="VISIT LIVE SITE">
        </div>
       <div class="description">
       <h3>Название проекта</h3><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa, iure laborum, iusto rem maiores tenetur voluptatum pariatur accusantium ipsam cumque, similique laudantium exercitationem ab. Animi ab hic facere labore quia, mollitia, ipsum temporibus alias, et voluptas amet eveniet. Illo placeat dolorum quidem, vero et beatae, atque nihil, sit debitis voluptatibus qui aut.</p>
       </div>
-       <input type="submit" value="VISIT LIVE SITE">
    </div></div>
    
    <div class="price"><div class="price_container">
@@ -85,7 +89,7 @@
        <form action="">
           <h3>ТИП САЙТА</h3>
            <select name="type" id="1">
-              <option value="Opt" selected disabled>Выберите пункт...</option>
+              <option value="Opt" class="choice" selected disabled>Выберите пункт...</option>
               <option value="Opt1">Сайт-визитка</option>
               <option value="Opt2">Корпоративный сайт</option>
               <option value="Opt3">Интернет-витрина</option>
@@ -104,7 +108,7 @@
            </select>
            <h3>ДИЗАЙН</h3>
            <select name="design" id="2">
-                <option value="Opt" selected disabled>Выберите пункт...</option>
+                <option value="Opt" class="choice" selected disabled>Выберите пункт...</option>
               <option value="Opt1">Минимализм</option>
               <option value="Opt2">Классический стиль</option>
               <option value="Opt3">Корпоративный стиль</option>
@@ -124,16 +128,20 @@
            </select>
            <h3>АДАПТИВНОСТЬ</h3>
            <select name="adapt" id="3">
-                <option value="Opt" selected disabled>Выберите пункт...</option>
+                <option value="Opt" class="choice" selected disabled>Выберите пункт...</option>
               <option value="Opt1">Есть</option>
               <option value="Opt2">Нет</option>
            </select>
+           <input type="hidden" class="select">
+           <img src="img/res.png" alt="">
+           <h5>Сроки</h5> 
+           <h5>Стоимость</h5>
        </form>
-       <h5>Сроки<br>Стоимость</h5>
    </div></div>
    
    <div class="statistics"><div class="statistics_container">
        <h2>НЕМНОГО СТАТИСТИКИ</h2>
+       <img src="img/title.png" class="title" alt="">
        <div class="stat_item1">
            <img src="img/smile.png" alt="">
            <h3>120</h3><h5>СЧАСТЛИВЫХ КЛИЕНТОВ</h5>
@@ -154,13 +162,16 @@
    
    <div class="reviews"><div class="reviews_container">
        <h2>ОТЗЫВЫ</h2>
-       <img src="" alt="">
-       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas expedita ratione blanditiis suscipit ea, illo voluptatem, incidunt similique eaque, tempore accusamus dolor deleniti iusto fuga, voluptatibus laborum. Quis, incidunt! <br> Михаил, Ген директор ПАО "Газпром"</p>
+       <img src="img/title.png" class="title" alt="">
+       <img src="img/misha.png" class="review" alt="">
+       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas expedita ratione blanditiis suscipit ea, illo voluptatem, incidunt similique eaque, tempore accusamus dolor deleniti iusto fuga, voluptatibus laborum. Quis, incidunt!</p>  
+       <h4><span class="name">Михаил</span>, Ген директор ПАО "Газпром".</h4>
    </div></div>
    
     <footer>
         <div class="contacts">
             <h2>МОИ КОНТАКТЫ</h2>
+            <img src="img/title.png" class="title" alt="">
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed est officia atque non accusantium asperiores.</p>
             <div class="contact_item1">
                 <img src="img/geo.png" alt="">
@@ -176,12 +187,13 @@
             </div>
             <form action="">
                 <h3>ОСТАВЬТЕ МНЕ СООБЩЕНИЕ</h3>
-                <input type="text" name="name" placeholder="Имя">
-                <input type="text" name="email" placeholder="Email">
+                <input type="text" id="name" name="name" placeholder="Имя">
+                <input type="text" id="email" name="email" placeholder="Email">
                 <textarea name="mail" id="mail" cols="30" rows="10" placeholder="Сообщение"></textarea>
-                <input type="submit" value="Отправить">
+                <input class="sending" type="submit" value="Отправить">
             </form>
         </div>
+        <div class="signature"><h4>Copyright © 2021 Андрей Браун. Design by Web</h4></div>
     </footer>  
             
 </body>
