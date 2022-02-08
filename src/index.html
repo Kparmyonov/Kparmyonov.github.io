@@ -17,19 +17,21 @@
 <body>
 
     <div class="preloader">
-        <div class="preloader__row">
-            <div class="preloader__item"></div>
-            <div class="preloader__item"></div>
+        <div class="preloader_row">
+            <div class="preloader_item"></div>
+            <div class="preloader_item"></div>
+            <div class="preloader_item"></div>
+            <div class="preloader_item"></div>
+            <div class="preloader_item"></div>
+            <div class="preloader_item"></div>
+            <div class="preloader_item"></div>
+            <div class="preloader_item"></div>
         </div>
     </div>
 
     <script>
         window.onload = function() {
-            document.body.classList.add('loaded_hiding');
-            window.setTimeout(function() {
-                document.body.classList.add('loaded');
-                document.body.classList.remove('loaded_hiding');
-            }, 500);
+            document.body.classList.add('loaded');
         }
 
     </script>
@@ -67,7 +69,7 @@
                 <img src="img/photo.png" class="photo" alt="">
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime quas exercitationem porro reiciendis, optio ducimus dolor quibusdam nobis nostrum dicta, aperiam praesentium iure ut, enim culpa quod. Inventore nemo omnis facere nulla, consequatur.</p>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime unde harum, voluptas obcaecati, pariatur, voluptate tenetur sed labore, deserunt dolore velit beatae inventore magnam! Vitae quas, quos repellendus asperiores aperiam pariatur ullam inventore..</p>
-                <input type="submit" value="Скачать резюме">
+                <input type="button" value="Скачать резюме">
             </div>
         </section>
 
@@ -108,7 +110,7 @@
                     <p>Какая-то компания</p>
                     <h3>WEBSITE:</h3>
                     <p>http://www.somedomain.com</p>
-                    <input type="submit" value="VISIT LIVE SITE">
+                    <input type="button" value="VISIT LIVE SITE">
                 </div>
                 <div class="description">
                     <h3>Название проекта</h3>
@@ -120,7 +122,7 @@
         <section class="price">
             <div class="price_container">
                 <h2>Расчёт стоимости</h2>
-                <form action="">
+                <form action="#">
                     <h3>ТИП САЙТА</h3>
                     <select name="type" id="1">
                         <option value="Opt" class="choice" selected disabled>Выберите пункт...</option>
@@ -166,7 +168,7 @@
                         <option value="Opt1">Есть</option>
                         <option value="Opt2">Нет</option>
                     </select>
-                    <input type="hidden" class="select">
+                    <input type="hidden" class="select" value="Оставить заявку">
                     <img src="img/res.png" alt="">
                     <h5>Сроки</h5>
                     <h5>Стоимость</h5>
@@ -211,36 +213,36 @@
                 <h4><span class="name">Михаил</span>, Ген директор ПАО "Газпром".</h4>
             </div>
         </section>
+        <footer>
+            <div class="contacts">
+                <h2>МОИ КОНТАКТЫ</h2>
+                <img src="img/title.png" class="title" alt="">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed est officia atque non accusantium asperiores.</p>
+                <div class="contact_item1">
+                    <img src="img/geo.png" alt="">
+                    <h5>Санкт-Петербург <br> Невский проспект 11</h5>
+                </div>
+                <div class="contact_item2">
+                    <img src="img/mail.png" alt="">
+                    <h5>info@companyname.com</h5>
+                </div>
+                <div class="contact_item3">
+                    <img src="img/phone.png" alt="">
+                    <h5>+7 999 999-99-99</h5>
+                </div>
+                <form action="#">
+                    <h3>ОСТАВЬТЕ МНЕ СООБЩЕНИЕ</h3>
+                    <input type="text" id="name" name="name" placeholder="Имя">
+                    <input type="email" id="email" name="email" placeholder="Email">
+                    <textarea name="mail" id="mail" cols="30" rows="10" placeholder="Сообщение"></textarea>
+                    <input class="sending" type="submit" value="Отправить">
+                </form>
+            </div>
+            <div class="signature">
+                <h4>Copyright © 2021 Андрей Браун. Design by Web</h4>
+            </div>
+        </footer>
     </main>
-    <footer>
-        <div class="contacts">
-            <h2>МОИ КОНТАКТЫ</h2>
-            <img src="img/title.png" class="title" alt="">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed est officia atque non accusantium asperiores.</p>
-            <div class="contact_item1">
-                <img src="img/geo.png" alt="">
-                <h5>Санкт-Петербург <br> Невский проспект 11</h5>
-            </div>
-            <div class="contact_item2">
-                <img src="img/mail.png" alt="">
-                <h5>info@companyname.com</h5>
-            </div>
-            <div class="contact_item3">
-                <img src="img/phone.png" alt="">
-                <h5>+7 999 999-99-99</h5>
-            </div>
-            <form action="">
-                <h3>ОСТАВЬТЕ МНЕ СООБЩЕНИЕ</h3>
-                <input type="text" id="name" name="name" placeholder="Имя">
-                <input type="email" id="email" name="email" placeholder="Email">
-                <textarea name="mail" id="mail" cols="30" rows="10" placeholder="Сообщение"></textarea>
-                <input class="sending" type="submit" value="Отправить">
-            </form>
-        </div>
-        <div class="signature">
-            <h4>Copyright © 2021 Андрей Браун. Design by Web</h4>
-        </div>
-    </footer>
 
 </body>
 

@@ -8,74 +8,109 @@ body {
     top: 0;
     right: 0;
     bottom: 0;
-    background: #e0e0e0;
+    background: #fff;
     z-index: 1001;
 }
 
-.preloader__row {
+.preloader_row {
     position: relative;
     top: 50%;
     left: 50%;
-    width: 70px;
-    height: 70px;
-    margin-top: -35px;
-    margin-left: -35px;
-    text-align: center;
-    animation: preloader-rotate 2s infinite linear;
+    width: 175px;
+    height: 175px;
+    margin-top: -87.5px;
+    margin-left: -87.5px;
+    animation: preloader_rotate 2s infinite linear;
 }
 
-.preloader__item {
+.preloader_item {
     position: absolute;
     display: inline-block;
-    top: 0;
-    background-color: #337ab7;
+    background-color: #344051;
     border-radius: 100%;
     width: 35px;
     height: 35px;
-    animation: preloader-bounce 2s infinite ease-in-out;
+    animation: preloader_bounce 2s infinite ease-in-out;
 }
 
-.preloader__item:last-child {
-    top: auto;
+.preloader_item:nth-child(1) {
+    left: 40%;
+    top: 0;
+}
+
+.preloader_item:nth-child(2) {
+    right: 15%;
+    top: 15%;
+    animation-delay: -0.25s;
+}
+
+.preloader_item:nth-child(3) {
+    top: 40%;
+    right: 0;
+    animation-delay: -0.5s;
+}
+
+.preloader_item:nth-child(4) {
+    bottom: 15%;
+    right: 15%;
+    animation-delay: -0.75s;
+}
+
+.preloader_item:nth-child(5) {
+    left: 40%;
     bottom: 0;
     animation-delay: -1s;
 }
 
-@keyframes preloader-rotate{
-    to{
+.preloader_item:nth-child(6) {
+    left: 15%;
+    bottom: 15%;
+    animation-delay: -1.25s;
+}
+
+.preloader_item:nth-child(7) {
+    bottom: 40%;
+    left: 0;
+    animation-delay: -1.5s;
+}
+
+.preloader_item:nth-child(8) {
+    top: 15%;
+    left: 15%;
+    animation-delay: -1.75s;
+}
+
+
+@keyframes preloader_rotate {
+    100% {
         transform: rotate(360deg);
     }
 }
 
-@keyframes preloader-bounce{
-    0%, 100%{
-        transform: scale(0);
+@keyframes preloader_bounce {
+
+    0%,
+    100% {
+        transform: scale(0.2);
     }
-    
-    50%{
-        transform: scale(1);
+
+    25%,
+    75% {
+        transform: scale(1.2);
+    }
+
+    50% {
+        transform: scale(0.2);
     }
 }
 
-.loaded_hiding .preloader{
-    transition: 0.3s opacity;
-    opacity: 0;
-}
-
-.loaded .preloader{
-    display: none;
+.loaded .preloader {
+  display: none;
 }
 
 main {
-    width: 100%;
     height: 100%;
-}
-
-.title {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 31px;
+    width: 100%;
 }
 
 h2 {
@@ -84,6 +119,22 @@ h2 {
     text-align: center;
     padding-top: 107px;
     font-weight: bold;
+    opacity: 0;
+    -webkit-animation: title_come 2s ease forwards;
+    -o-animation: title_come 2s ease forwards;
+    animation: title_come 2s ease forwards;
+}
+
+@keyframes title_come {
+    from {
+        opacity: 0;
+        transform: perspective(900px) rotateY(90deg);
+    }
+
+    to {
+        opacity: 1;
+        transform: perspective(900px) rotateY(0deg);
+    }
 }
 
 nav {
@@ -256,11 +307,40 @@ nav {
     height: 78%;
 }
 
+@keyframes downshift_photo {
+    from {
+        opacity: 0;
+        margin-top: 500px;
+    }
+
+    50% {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+        margin-top: 60px;
+    }
+}
+
+@keyframes mask {
+    50% {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
 .photo {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    padding-top: 60px;
+    opacity: 0;
+    -webkit-animation: downshift_photo 2s ease forwards;
+    -o-animation: downshift_photo 2s ease forwards;
+    animation: downshift_photo 2s ease forwards;
 }
 
 .text_container p {
@@ -268,6 +348,11 @@ nav {
     font-size: 15px;
     text-align: left;
     margin: 20px 585px;
+    opacity: 0;
+    -webkit-animation: mask 2s ease forwards;
+    -o-animation: mask 2s ease forwards;
+    animation: mask 2s ease forwards;
+    animation-delay: 0.4s;
 }
 
 .text_container input {
@@ -280,6 +365,21 @@ nav {
     font-size: 13px;
     padding: 0px 12px 0px 33px;
     margin: 15px 0px 0px 886px;
+    transform: scale(1);
+    transition: all 0.2s;
+    opacity: 0;
+    -webkit-animation: mask 2s ease forwards;
+    -o-animation: mask 2s ease forwards;
+    animation: mask 2s ease forwards;
+    animation-delay: 0.8s;
+}
+
+.text_container input:hover {
+    transform: scale(1.1);
+}
+
+.text_container input:active {
+    transform: scale(1.2);
 }
 
 .skills {
@@ -312,14 +412,45 @@ nav {
     display: block;
     margin-left: auto;
     margin-right: auto;
+    opacity: 0;
+    -webkit-animation: rotate_img 1s ease forwards;
+    -o-animation: rotate_img 1s ease forwards;
+    animation: rotate_img 1s ease forwards;
+}
+
+@keyframes rotate_img {
+    from {
+        opacity: 0;
+        transform: rotate(-720deg) scale(0);
+    }
+
+    to {
+        opacity: 1;
+        transform: rotate(0deg) scale(1);
+    }
 }
 
 .skills h4 {
     color: #cf7600;
     font-size: 17px;
     font-weight: bold;
-    margin-top: 35px;
     text-align: center;
+    opacity: 0;
+    -webkit-animation: topshift_skills 1s ease forwards;
+    -o-animation: topshift_skills 1s ease forwards;
+    animation: topshift_skills 1s ease forwards;
+}
+
+@keyframes topshift_skills {
+    from {
+        opacity: 0;
+        margin-top: -80px;
+    }
+
+    to {
+        opacity: 1;
+        margin-top: 35px;
+    }
 }
 
 .skills p {
@@ -327,7 +458,22 @@ nav {
     font-size: 15px;
     text-align: center;
     width: 210px;
-    margin-top: 18px;
+    opacity: 0;
+    -webkit-animation: downshift_p 1s ease forwards;
+    -o-animation: downshift_p 1s ease forwards;
+    animation: downshift_p 1s ease forwards;
+}
+
+@keyframes downshift_p {
+    from {
+        opacity: 0;
+        margin-top: 200px;
+    }
+
+    to {
+        opacity: 1;
+        margin-top: 18px;
+    }
 }
 
 .cases {
@@ -336,10 +482,25 @@ nav {
 }
 
 .cases_container > p {
-    margin-top: 37px;
     text-align: center;
     color: #3f495a;
     font-size: 15px;
+    opacity: 0;
+    -webkit-animation: topshift_case 2s ease forwards;
+    -o-animation: topshift_case 2s ease forwards;
+    animation: topshift_case 2s ease forwards;
+}
+
+@keyframes topshift_case {
+    from {
+        opacity: 0;
+        margin-top: 0px;
+    }
+
+    to {
+        opacity: 1;
+        margin-top: 37px;
+    }
 }
 
 .case {
@@ -347,22 +508,41 @@ nav {
     margin-left: auto;
     margin-right: auto;
     margin-top: 41px;
+    opacity: 0;
+    -webkit-animation: mask 2s ease forwards;
+    -o-animation: mask 2s ease forwards;
+    animation: mask 2s ease forwards;
 }
 
 .client {
     float: left;
     margin-top: 40px;
+    opacity: 0;
+    -webkit-animation: leftshift_client 2s ease forwards;
+    -o-animation: leftshift_client 2s ease forwards;
+    animation: leftshift_client 2s ease forwards;
+}
+
+@keyframes leftshift_client {
+    from {
+        opacity: 0;
+        margin-left: 100px;
+    }
+
+    to {
+        opacity: 1;
+        margin-left: 370px;
+    }
 }
 
 .client h3 {
-    margin-left: 370px;
     font-size: 20px;
     color: #384354;
     font-weight: bold;
 }
 
 .client p {
-    margin: 12px 0px 12px 370px;
+    margin: 12px 0px 12px 0px;
     font-size: 13px;
     color: #3f495a;
 }
@@ -372,16 +552,48 @@ nav {
     text-align: center;
     color: #fff;
     background: #63b5ae;
+    border: 2px solid #63b5ae;
     border-radius: 5px;
     font-size: 17px;
-    margin: 10px 0px 0px 370px;
+    margin: 10px 0px 0px 0px;
     padding: 0px 30px;
+    transform: scale(1);
+    transition: all 0.3s;
+}
+
+.client input:hover {
+    background: #fff;
+    color: #63b5ae;
+}
+
+.client input:active {
+    transform: scale(1.1);
+}
+
+.description {
+    opacity: 0;
+    -webkit-animation: downshift_description 2s ease forwards;
+    -o-animation: downshift_description 2s ease forwards;
+    animation: downshift_description 2s ease forwards;
+    animation-delay: 1s;
+}
+
+@keyframes downshift_description {
+    from {
+        opacity: 0;
+        margin-top: 80px;
+    }
+
+    to {
+        opacity: 1;
+        margin-top: 40px;
+    }
 }
 
 .description h3 {
     font-size: 20px;
     color: #384354;
-    margin: 40px 398px 0px 610px;
+    margin: 0px 398px 0px 610px;
     font-weight: bold;
 }
 
@@ -410,26 +622,65 @@ nav {
     margin: 50px 0px 20px 0px;
     font-size: 23px;
     font-weight: bold;
+    -webkit-animation: comming 3s ease;
+    -o-animation: comming 3s ease;
+    animation: comming 3s ease;
 }
 
 .price_container select {
     height: 57px;
-    width: 893px;
+    width: 0px;
+    padding: 0px;
     appearance: none;
     background: url(../img/select.png) 96% 50%/17px auto no-repeat, #eee;
     font-size: 14px;
-    padding: 0px 31px 0px 20px;
     color: #737373;
+    -webkit-animation: comming_form 3s ease forwards;
+    -o-animation: comming_form 3s ease forwards;
+    animation: comming_form 3s ease forwards;
+    animation-delay: 1s;
+}
+
+@keyframes comming_form {
+    from {
+        width: 0px;
+    }
+
+    to {
+        width: 893px;
+        padding: 0px 31px 0px 20px;
+    }
 }
 
 .price_container img {
     margin: 37px 0px 0px 3px;
+    opacity: 0;
+    -webkit-animation: title_come 2s ease forwards;
+    -o-animation: title_come 2s ease forwards;
+    animation: title_come 2s ease forwards;
+    animation-delay: 3s;
 }
 
 .price_container h5 {
-    margin-top: 20px;
     font-size: 15px;
     font-weight: bold;
+    opacity: 0;
+    -webkit-animation: downshift_price 2s ease forwards;
+    -o-animation: downshift_price 2s ease forwards;
+    animation: downshift_price 2s ease forwards;
+    animation-delay: 5s;
+}
+
+@keyframes downshift_price {
+    from {
+        margin-top: 80px;
+        opacity: 0;
+    }
+
+    to {
+        margin-top: 20px;
+        opacity: 1;
+    }
 }
 
 .stat_item1 {
@@ -467,6 +718,10 @@ nav {
     display: block;
     margin-left: auto;
     margin-right: auto;
+    opacity: 0;
+    -webkit-animation: rotate_img 1.5s ease forwards;
+    -o-animation: rotate_img 1.5s ease forwards;
+    animation: rotate_img 1.5s ease forwards;
 }
 
 .statistics h3 {
@@ -476,6 +731,10 @@ nav {
     color: #323e4f;
     margin-top: 33px;
     z-index: 3;
+    opacity: 0;
+    -webkit-animation: appearance_text 1.5s ease-out forwards;
+    -o-animation: appearance_text 1.5s ease-out forwards;
+    animation: appearance_text 1.5s ease-out forwards;
 }
 
 .statistics h5 {
@@ -484,6 +743,22 @@ nav {
     color: #323e4f;
     margin-top: 30px;
     z-index: 3;
+    opacity: 0;
+    -webkit-animation: appearance_text 1.5s ease-out forwards;
+    -o-animation: appearance_text 1.5s ease-out forwards;
+    animation: appearance_text 1.5s ease-out forwards;
+}
+
+@keyframes appearance_text {
+    from {
+        opacity: 0;
+        transform: skew(-45deg, -45deg) scale(0.3);
+    }
+
+    to {
+        opacity: 1;
+        transform: skew(0deg, 0deg) scale(1);
+    }
 }
 
 .statistics .parallax_mask {
@@ -503,7 +778,10 @@ nav {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 58px;
+    opacity: 0;
+    -webkit-animation: downshift_photo 2s ease forwards;
+    -o-animation: downshift_photo 2s ease forwards;
+    animation: downshift_photo 2s ease forwards;
 }
 
 .reviews_container p {
@@ -511,12 +789,22 @@ nav {
     font-size: 15px;
     margin: 37px 616px 38px 616px;
     color: #243042;
+    opacity: 0;
+    -webkit-animation: mask 2s ease forwards;
+    -o-animation: mask 2s ease forwards;
+    animation: mask 2s ease forwards;
+    animation-delay: 0.4s;
 }
 
 .reviews_container h4 {
     text-align: center;
     font-size: 15px;
     color: #243042;
+    opacity: 0;
+    -webkit-animation: mask 2s ease forwards;
+    -o-animation: mask 2s ease forwards;
+    animation: mask 2s ease forwards;
+    animation-delay: 0.8s;
 }
 
 .reviews_container span {
@@ -561,12 +849,21 @@ footer {
     display: block;
     margin-left: auto;
     margin-right: auto;
+    opacity: 0;
+    -webkit-animation: rotate_img 1s ease forwards;
+    -o-animation: rotate_img 1s ease forwards;
+    animation: rotate_img 1s ease forwards;
 }
 
 .contacts h5 {
     text-align: center;
     font-size: 15px;
     margin-top: 15px;
+    opacity: 0;
+    -webkit-animation: comming 2s ease forwards;
+    -o-animation: comming 2s ease forwards;
+    animation: comming 2s ease forwards;
+    animation-delay: 1s;
 }
 
 .contacts h3 {
@@ -618,6 +915,17 @@ footer {
     width: 121px;
     border: 2px solid #fff;
     border-radius: 5px;
+    transform: scale(1);
+    transition: all 0.2s;
+}
+
+.sending:hover {
+    background: #fff;
+    color: #323e4f;
+}
+
+.sending:active {
+    transform: scale(1.1);
 }
 
 .signature {
@@ -629,4 +937,15 @@ footer {
     text-align: center;
     color: #fff;
     line-height: 92px;
+}
+
+img.title {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 31px;
+    opacity: 0;
+    -webkit-animation: title_come 2s ease forwards;
+    -o-animation: title_come 2s ease forwards;
+    animation: title_come 2s ease forwards;
 }
